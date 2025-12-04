@@ -1,0 +1,22 @@
+Codeforces Problem 1A
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      long n=sc.nextLong();
+      long m=sc.nextLong();
+      long a=sc.nextLong();
+      long count1=n/a;
+      if(n%a!=0)
+        count1++;
+      long count2=0;
+      if(m-a>=0){
+      count2+=((m-a)/a)*count1;
+      if((m-a)%a!=0)
+        count2+=count1;
+      }
+      System.out.print(count1+count2);
+    }
+}
