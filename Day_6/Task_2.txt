@@ -1,0 +1,15 @@
+GeeksforGeeks "Minimum Platforms"
+
+class Solution {
+    public int minPlatform(int arr[], int dep[]) {
+        int min_plat=0;
+        for(int i=0;i<=2400;i++){
+            int platform=0;
+            for(int j=0;j<arr.length;j++){
+                if(arr[j]<=i&&i<=dep[j])platform++;
+            }
+            if(platform>min_plat)min_plat=platform;
+        }
+        return min_plat;
+    }
+}
