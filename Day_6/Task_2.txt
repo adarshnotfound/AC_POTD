@@ -1,15 +1,27 @@
-GeeksforGeeks "Minimum Platforms"
+Codeforces Problem 1832A
 
-class Solution {
-    public int minPlatform(int arr[], int dep[]) {
-        int min_plat=0;
-        for(int i=0;i<=2400;i++){
-            int platform=0;
-            for(int j=0;j<arr.length;j++){
-                if(arr[j]<=i&&i<=dep[j])platform++;
-            }
-            if(platform>min_plat)min_plat=platform;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int t=sc.nextInt();
+      String[] arr=new String[t];
+      for(int i=0;i<t;i++)
+        arr[i]=sc.next();
+      String str1;
+      for(int i=0;i<t;i++){
+        str1=arr[i].substring(0,(arr[i].length()/2));
+        int count=0;
+        char ch=str1.charAt(0);
+        for(int j=0;j<str1.length();j++){
+          if(str1.charAt(j)==ch)
+          count++;
         }
-        return min_plat;
+        if(count==str1.length())
+          System.out.println("NO");
+        else
+          System.out.println("YES");
+      }
     }
-}
+  }
