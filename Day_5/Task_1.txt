@@ -1,4 +1,4 @@
-Codeforces 282A
+Codeforces Problem 282A
 
 import java.util.*;
  
