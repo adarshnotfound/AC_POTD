@@ -1,0 +1,29 @@
+LeetCode 2843
+
+class Solution {
+    public int countSymmetricIntegers(int low, int high) {
+        int copy,d=0,sum1=0,sum2=0,SymmInt=0;
+        for(int i=low;i<=high;i++){
+            copy=i;
+            d=0;
+            while(copy>0){
+                d++;
+                copy/=10;
+            }
+            if(d%2==0){
+                copy=i;
+                sum1=sum2=0;
+                while(copy>0){
+                    if(copy<Math.pow(10,d/2))
+                      sum2+=copy%10;
+                    else
+                      sum1+=copy%10;
+                    copy/=10;
+                }
+                if(sum1==sum2)
+                  SymmInt++;
+            }
+        }
+        return SymmInt;
+    }
+}
