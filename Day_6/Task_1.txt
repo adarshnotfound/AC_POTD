@@ -1,0 +1,22 @@
+LeetCode 1021
+
+class Solution {
+    public String removeOuterParentheses(String s) {
+        int count=0;
+        String str="";
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            if(count==1&&ch==')'){
+                count=0;
+                continue;
+            }
+            if(count!=0)
+                str+=ch;
+            if(ch=='(')
+                count++;
+            else if(ch==')')
+                count--;
+        }
+        return str;
+    }
+}
