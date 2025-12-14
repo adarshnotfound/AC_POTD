@@ -1,0 +1,20 @@
+Codeforces 282A
+
+import java.util.*;
+ 
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int x=0;
+      String str;
+      for(int i=1;i<=n;i++){
+        str=sc.next();
+        if(str.equals("++X")||str.equals("X++"))
+          x++;
+        if(str.equals("--X")||str.equals("X--"))
+          x--;
+      }
+      System.out.println(x);
+    }
+  }
